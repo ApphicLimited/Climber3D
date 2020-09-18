@@ -854,6 +854,8 @@ GameObject:
   - component: {fileID: 674647755}
   - component: {fileID: 674647754}
   - component: {fileID: 674647753}
+  - component: {fileID: 674647756}
+  - component: {fileID: 674647757}
   m_Layer: 0
   m_Name: SagKol
   m_TagString: Untagged
@@ -936,6 +938,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674647751}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &674647756
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674647751}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41383d73cf592ea4fa77d3c4a3fb6795, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &674647757
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674647751}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9c644857896a85249a4495e470ec7997, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9c644857896a85249a4495e470ec7997, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,13 +1311,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.15097584, y: 0.020262228, z: 0.016104968, w: 0.9881985}
-  m_LocalPosition: {x: -0.18, y: 1.02, z: -2.69}
+  m_LocalRotation: {x: -0.3837622, y: 0.031740878, z: 0.013200105, w: 0.9227919}
+  m_LocalPosition: {x: -0.11, y: -0.62, z: -1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1311777725}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -17.4, y: 2.1130002, z: 1.544}
+  m_LocalEulerAnglesHint: {x: -45.162003, y: 3.94, z: 0}
 --- !u!1 &1005126884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1907,8 @@ MonoBehaviour:
   hand: 0
   righthand: {fileID: 674647751}
   Lefthand: {fileID: 368465411}
+  jumping: 0
+  zipliyor: 0
 --- !u!136 &1311777722
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1891,7 +1930,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311777720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

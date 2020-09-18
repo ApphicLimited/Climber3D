@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     public bool hand = false;
     public GameObject righthand, Lefthand;
+    
 
     public bool jumping = false;
 
@@ -34,30 +35,30 @@ public class PlayerMove : MonoBehaviour
     }
     public void rightmove()
     {
-        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 1, righthand.transform.position.z), 0.5f).OnComplete(righthandback);
-
+        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 1, righthand.transform.position.z), 0.2f).OnComplete(righthandback);
+        righthand.GetComponent<Animation>().Play("SagKolNew");
     }
     public void leftmove()
     {
-        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 1, Lefthand.transform.position.z), 0.5f).OnComplete(lefthandback);
-
+        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 1, Lefthand.transform.position.z), 0.2f).OnComplete(lefthandback);
+        
     }
     public void lefthandback()
     {
-        Lefthand.transform.DOLocalMove(new Vector3(Lefthand.transform.localPosition.x, 0, Lefthand.transform.localPosition.z), 0.5f);
-        transform.DOMove(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f).OnComplete(()=>jumping=false);
+        Lefthand.transform.DOLocalMove(new Vector3(Lefthand.transform.localPosition.x, 0, Lefthand.transform.localPosition.z), 0.2f);
+        transform.DOMove(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.2f).OnComplete(()=>jumping=false);
 
     }
     public void righthandback()
     {
-        righthand.transform.DOLocalMove(new Vector3(righthand.transform.localPosition.x, 0, righthand.transform.localPosition.z), 0.5f);
-        transform.DOMove(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f);
+        righthand.transform.DOLocalMove(new Vector3(righthand.transform.localPosition.x, 0, righthand.transform.localPosition.z), 0.2f);
+        transform.DOMove(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.2f);
     }
     public void jumpDoubleHand()
     {
 
-        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 1, righthand.transform.position.z), 0.5f).OnComplete(righthandback);
-        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 1, Lefthand.transform.position.z), 0.5f).OnComplete(lefthandback);
+        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 1, righthand.transform.position.z), 0.2f).OnComplete(righthandback);
+        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 1, Lefthand.transform.position.z), 0.2f).OnComplete(lefthandback);
 
     }
     public void getir()
