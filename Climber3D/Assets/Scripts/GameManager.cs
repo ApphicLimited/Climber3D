@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PauseManager.FindObjectOfType<PauseManager>();
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         InGamesScreen.SetActive(false);
         currentLevel = PlayerPrefs.GetInt("Level");
        // LevelText.text = "LEVEL " + (currentLevel + 1);
