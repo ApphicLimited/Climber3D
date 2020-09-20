@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
     public bool hand = false;
     public GameObject righthand, Lefthand;
-    
+    public Transform player;
+    public Text scoreText;
 
     public bool jumping = false;
 
@@ -26,6 +28,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = player.position.y.ToString("0");
         getir();
         if (Input.GetMouseButtonDown(0))
         {
@@ -35,12 +38,12 @@ public class PlayerMove : MonoBehaviour
     }
     public void rightmove()
     {
-        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 1, righthand.transform.position.z), 0.4f).OnComplete(righthandback);
+        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 2, righthand.transform.position.z), 0.4f).OnComplete(righthandback);
         righthand.GetComponent<Animation>().Play("SagKolNew");
     }
     public void leftmove()
     {
-        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 1, Lefthand.transform.position.z), 0.4f).OnComplete(lefthandback);
+        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 2, Lefthand.transform.position.z), 0.4f).OnComplete(lefthandback);
         Lefthand.GetComponent<Animation>().Play("SolKolNew");
     }
     public void lefthandback()
@@ -57,8 +60,8 @@ public class PlayerMove : MonoBehaviour
     public void jumpDoubleHand()
     {
 
-        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 2, righthand.transform.position.z), 0.3f).OnComplete(righthandback);
-        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 2, Lefthand.transform.position.z), 0.3f).OnComplete(lefthandback);
+        righthand.transform.DOMove(new Vector3(righthand.transform.position.x, righthand.transform.position.y + 4, righthand.transform.position.z), 0.3f).OnComplete(righthandback);
+        Lefthand.transform.DOMove(new Vector3(Lefthand.transform.position.x, Lefthand.transform.position.y + 4, Lefthand.transform.position.z), 0.3f).OnComplete(lefthandback);
         righthand.GetComponent<Animation>().Play("SagKolNew");
         Lefthand.GetComponent<Animation>().Play("SolKolNew");
     }

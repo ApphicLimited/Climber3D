@@ -15,25 +15,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void CompleteLevel()
     {
-        StartCoroutine(Bitti());
-        
-
-    }
-    IEnumerator Bitti()
-    {
-        yield return new WaitForSeconds(2);
         CompleteLevelPanel.SetActive(true);
         InGamesScreen.SetActive(false);
         Time.timeScale = 0;
-        PlayerPrefs.SetInt("Level", currentLevel);
+
     }
+
     void Start()
     {
         PauseManager.FindObjectOfType<PauseManager>();
         Time.timeScale = 0;
         InGamesScreen.SetActive(false);
-        currentLevel = PlayerPrefs.GetInt("Level");
-       // LevelText.text = "LEVEL " + (currentLevel + 1);
+        
         if (PlayerPrefs.GetInt("menusahne") == 1)
         {
             InGamesScreen.SetActive(true);

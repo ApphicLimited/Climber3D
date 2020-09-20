@@ -6,13 +6,18 @@ public class END : MonoBehaviour
 {
     public GameManager gameManager;
 
-    private void OnTriggerEnter(Collider collision)
+   
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.collider.tag == "Player")
         {
+
+           
+            FindObjectOfType<GameManager>().EndGame();
             gameManager.CompleteLevel();
+
         }
     }
-
 
 }
